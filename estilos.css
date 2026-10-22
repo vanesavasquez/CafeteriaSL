@@ -1,0 +1,22 @@
+:root {
+    /* Variables de tipografía */
+    --fuente-titulos: "baloo-2", sans-serif;
+    --fuente-textos: "Montserrat", sans-serif;
+    --fuente-detalles: "Sniglet", cursive, sans-serif;
+
+    /* Convención estándar recomendada (kebab-case y corrección de sintaxis) */
+    --rojo-vibrante: #8c0D17;
+    --blanco-base: #EBEBEB;
+    --lila-pastel: #CACEF9;
+    --amarillo-tranquilo: #EEBC35;
+    --cafe-con-leche: #AE6D4E;
+    --rosa-dulce: #DB7ADB;
+
+    /* Nombres exactos solicitados (con prefijo obligatorio '--') */
+    --Rojo_vivrante: #8c0D17;
+    --Blanco_base: #EBEBEB;
+    --Lila_pastel: #CACEF9;
+    --Amarillo_tranquilo: #EEBC35;
+    --Cafffe_conleche: #AE6D4E;
+    --Rosa_dulce: #DB7ADB;
+}
