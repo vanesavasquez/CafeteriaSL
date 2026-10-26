@@ -22,37 +22,297 @@
 </head>
 <body>
 
-    <!-- Estructura base utilizando el sistema de grillas de Bootstrap 5 -->
-    <main class="container my-5">
-        <header class="text-center mb-4">
-            <h1>Cafetería</h1>
-            <p class="text-secondary">Trabajo Práctico N° 1</p>
-        </header>
+    <!-- Barra de Navegación (Navbar) Bootstrap 5 -->
+    <nav class="navbar navbar-expand-lg bg-rojo-vibrante sticky-top px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img
+                    src="logo%20blanco.png"
+                    alt="Logo Loomb Cafetería"
+                    width="120"
+                />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menú
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cafés</a></li>
+                            <li><a class="dropdown-item" href="#">Pastelería</a></li>
+                            <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                        </ul>
+                    </li>
+                                      
 
-        <!-- Fila con columnas responsivas de ejemplo -->
+                        <a class="btn btn-primary" href="#" role="button">Inscribite</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Sección Inicio: Contenedor full-width, 2 columnas, fondo rojo vibrante, textos blanco base -->
+    <section id="inicio" class="container-fluid d-flex flex-column justify-content-center p-7 bg-rojo-vibrante text-blanco-base">
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-6 col-lg-8">
+                <span class="badge text-bg-secondary">Escuela de Barismo</span>
+                <h1 class="display-5 fw-bold">Aprendé a preparar el café perfecto</h1>
+                <p class="lead">Disfruta los aromas y sabores únicos de nuestra selección de granos tostados artesanalmente en San Luis.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-primary" >Ver cursos</button>
+                    <button type="button" class="btn btn-outline-primary">Contactanos</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                
+                
+                        <div class="card">
+                            <img src="img/expreso101.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Expreso 101" loading="lazy">
+                            
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary">Secondary</span>
+                                <h5 class="card-title">Expreso 101</h5>
+                                <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                                <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta. </p>
+                                <a href="#" class="btn btn-primary">Reserva ahora</a>
+                            </div>
+
+                        </div>
+                  
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Sección Cursos: Contenedor full-width, 3 columnas con 3 cards, fondo lila pastel -->
+    <section id="cursos" class="container-fluid p-7 bg-lila-pastel">
+        <div class="text-start mb-5">
+            <h2 class="fw-bold">Nuestros Cursos</h2>
+            <p class="text-muted">Aprende con baristas profesionales las mejores técnicas del café</p>
+        </div>
         <div class="row g-4">
             <div class="col-12 col-md-4">
-                <div class="p-4 border rounded bg-light text-center shadow-sm">
-                    <h3>Columna 1</h3>
-                    <p>Contenido / Producto</p>
+                <div class="card">
+                    <img src="img/Barismo%20Inicial.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Barismo Inicial" loading="lazy">
+                    <div class="card-body">
+                        <span class="badge text-bg-secondary">Inicial</span>
+                        <h5 class="card-title">Barismo Inicial</h5>
+                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-dark">$45.000</span>
+                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="p-4 border rounded bg-light text-center shadow-sm">
-                    <h3>Columna 2</h3>
-                    <p>Contenido / Producto</p>
+                <div class="card">
+                    <img src="img/Latte%20art.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Latte Art" loading="lazy">
+                    <div class="card-body">
+                        <span class="badge text-bg-secondary">Intermedio</span>
+                        <h5 class="card-title">Latte art</h5>
+                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-dark">$50.000</span>
+                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="p-4 border rounded bg-light text-center shadow-sm">
-                    <h3>Columna 3</h3>
-                    <p>Contenido / Producto</p>
+                <div class="card">
+                    <img src="img/M%C3%A9todos%20de%20filtrado.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Métodos de filtrado" loading="lazy">
+                    <div class="card-body">
+                        <span class="badge text-bg-secondary">Todos los niveles</span>
+                        <h5 class="card-title">Métodos de filtrado</h5>
+                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold text-dark">$38.000</span>
+                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- 3. Sección Contacto: Contenedor full-width, 2 columnas, fondo amarillo tranquilo -->
+    <section id="contacto" class="container-fluid p-7 bg-amarillo-tranquilo">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Contacto</h2>
+            <p class="text-muted">Visítanos o déjanos tu consulta</p>
+        </div>
+        <div class="row g-5 align-items-center">
+            <div class="col-12 col-md-7 col-lg-6">
+                <div class="p-4 bg-white rounded shadow-sm">
+                    <form class="row g-3" id="formulario-contacto">
+                        <!-- 1. Fila 1: Nombre y Email con Floating Labels -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="campo-nombre" placeholder="Tu nombre" required>
+                                <label for="campo-nombre">Nombre <span class="text-danger">*</span></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="campo-email" placeholder="tu@correo.com" required>
+                                <label for="campo-email">Correo electrónico <span class="text-danger">*</span></label>
+                            </div>
+                        </div>
+
+                        <!-- 2. Fila 2: Teléfono con Input Group, Dropdown y Floating Label -->
+                        <div class="col-12">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    🇦🇷 +54
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">🇦🇷 Argentina (+54)</button></li>
+                                    <li><button class="dropdown-item" type="button">🇨🇱 Chile (+56)</button></li>
+                                    <li><button class="dropdown-item" type="button">🇺🇾 Uruguay (+598)</button></li>
+                                    <li><button class="dropdown-item" type="button">🇧🇷 Brasil (+55)</button></li>
+                                </ul>
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="campo-telefono" placeholder="Teléfono" inputmode="numeric" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Ingresa únicamente números" required>
+                                    <label for="campo-telefono">Teléfono <span class="text-danger">*</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Fila 3: Cursos de interés en Checkboxes Inline (Controles de selección: no admiten floating labels) -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold d-block mb-2">Cursos de interés <span class="text-muted fw-normal small">(Opcional)</span></label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="curso-barista" value="barista-inicial">
+                                <label class="form-check-label" for="curso-barista">Barista Inicial</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="curso-latte" value="arte-latte">
+                                <label class="form-check-label" for="curso-latte">Arte Latte</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="curso-filtrados" value="metodos-filtrados">
+                                <label class="form-check-label" for="curso-filtrados">Métodos Filtrados</label>
+                            </div>
+                        </div>
+
+                        <!-- 4. Fila 4: Campo de texto abierto con Floating Label -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control textarea-contacto" id="campo-mensaje" placeholder="Mensaje o Consulta"></textarea>
+                                <label for="campo-mensaje">Mensaje o Consulta <span class="text-muted fw-normal small">(Opcional)</span></label>
+                            </div>
+                        </div>
+
+                        <!-- 5. Fila 5: Checkbox de novedades/promociones (Control de selección: no admite floating labels) -->
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check-promociones">
+                                <label class="form-check-label" for="check-promociones">
+                                    Quiero recibir novedades por email.
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Botón de envío del formulario -->
+                        <div class="col-12 pt-2">
+                            <button type="submit" class="btn btn-primary w-100">Enviar consulta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 col-lg-6">
+                <h4 class="fw-bold">Visita Nuestra Cafetería</h4>
+               
+                <p class="mb-1"><strong>📍 Dirección:</strong> Av. del Fundador 1450, San Luis</p>
+                <p class="mb-1"><strong>⏰ Horarios:</strong> Lunes a Sábados: 8:00 a 20:30 hs</p>
+                <p class="mb-0"><strong>📞 Teléfono:</strong> (0266) 400-0000</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid py-4 px-4 bg-dark text-white text-center">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 text-md-start mb-3 mb-md-0">
+                <p class="mb-0">&copy; 2026 Cafetería Loomb. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-12 col-md-6 text-md-end">
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3">
+                    WhatsApp
+                </a>
+                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3">
+                    Facebook
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de confirmación de envío -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalConfirmacionLabel">¡Consulta enviada!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Gracias por comunicarte con nosotros. Hemos recibido tu mensaje y te responderemos a la brevedad.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Script para validación y apertura del Modal al enviar el formulario -->
+    <script>
+        const formContacto = document.getElementById('formulario-contacto');
+        const modalConfirmacion = new bootstrap.Modal(document.getElementById('modalConfirmacion'));
+
+        formContacto.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita la recarga de página
+
+            if (formContacto.checkValidity()) {
+                modalConfirmacion.show(); // Abre el modal de Bootstrap 5
+                formContacto.reset();     // Limpia los campos del formulario
+            } else {
+                formContacto.reportValidity(); // Muestra alertas nativas si falta un campo requerido
+            }
+        });
+    </script>
 </body>
 </html>
