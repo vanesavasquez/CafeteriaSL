@@ -1,6 +1,6 @@
 :root {
     /* Variables de tipografía */
-    --fuente-titulos: "baloo-2", sans-serif;
+    --fuente-titulos: "Bagel Fat One", system-ui, sans-serif;
     --fuente-textos: "Montserrat", sans-serif;
     --fuente-detalles: "Sniglet", cursive, sans-serif;
 
@@ -11,6 +11,10 @@
     --amarillo-tranquilo: #EEBC35;
     --cafe-con-leche: #AE6D4E;
     --rosa-dulce: #DB7ADB;
+    --color-oscuro: #1b1b1b;
+    --negro-suave: #1b1b1b;
+    --blanco-suave: #faf2e9;
+    --fondo-secundario: #faf2e9;
 
     /* Nombres exactos solicitados (con prefijo obligatorio '--') */
     --Rojo_vivrante: #8c0D17;
@@ -19,7 +23,52 @@
     --Amarillo_tranquilo: #EEBC35;
     --Cafffe_conleche: #AE6D4E;
     --Rosa_dulce: #DB7ADB;
+    --color_3333: #1b1b1b;
+    --Blanco_suaves: #faf2e9;
+
+    /* Tokens Neo-Brutalistas (Bordes y Sombras desplazadas) */
+    --borde-brutalista: 2.5px solid var(--color-oscuro);
+    --borde-fino: 2px solid var(--color-oscuro);
+    --sombra-brutalista: 6px 6px 0px var(--color-oscuro);
+    --sombra-brutalista-sm: 3px 3px 0px var(--color-oscuro);
 }
+
+/* ==========================================================================
+   Aplicación de Tipografías del Proyecto
+   ========================================================================== */
+
+/* 1. Base general y todo el contenido: Montserrat 600 */
+body {
+    font-family: var(--fuente-textos);
+    font-size: 1.05rem; /* Incremento sutil para mayor legibilidad */
+    font-weight: 600;   /* Peso semibold */
+}
+
+/* 2. Títulos únicamente: Bagel Fat One (peso nativo 400 para evitar negrita sintética) */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.card-title {
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Ajuste de Escala Tipográfica (Mayor Impacto Visual)
+   ========================================================================== */
+h1, .h1 { font-size: 2.75rem; }
+h2, .h2 { font-size: 2.25rem; }
+h3, .h3 { font-size: 1.85rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.3rem; }
+
+/* Display escalado de forma fluida y responsiva para máximo impacto */
+.display-1 { font-size: clamp(3.5rem, 7vw, 5.5rem); }
+.display-2 { font-size: clamp(3rem, 6vw, 4.75rem); }
+.display-3 { font-size: clamp(2.75rem, 5.5vw, 4.25rem); }
+.display-4 { font-size: clamp(2.5rem, 5vw, 3.75rem); }
+.display-5 { font-size: clamp(2.25rem, 4.5vw, 3.25rem); }
+.display-6 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); }
 
 /* ==========================================================================
    Clases de utilidad de Color (basadas en las variables del proyecto)
@@ -40,6 +89,10 @@
     background-color: var(--amarillo-tranquilo);
 }
 
+.bg-blanco-suave {
+    background-color: var(--blanco-suave);
+}
+
 /* ==========================================================================
    Espaciado Lateral Personalizado para Contenedores Full-Width
    ========================================================================== */
@@ -49,11 +102,12 @@
 }
 
 /* ==========================================================================
-   Alturas de viewport: navbar (10svh) + sección Inicio (90svh) = pantalla
+   Alturas de viewport y bordes divisores negros
    ========================================================================== */
 nav.navbar {
     /* Ocupa el 10% de la altura mínima del viewport */
     min-height: 10svh;
+    border-bottom: 0.2rem solid #000000;
 
     /* Colores del navbar mediante las variables nativas de Bootstrap 5 */
     --bs-navbar-color: var(--blanco-base);
@@ -65,9 +119,25 @@ nav.navbar {
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23EBEBEB' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+section {
+    border-bottom: 0.2rem solid #000000;
+}
+
 section#inicio {
     /* Ocupa el 90% de la altura mínima del viewport */
     min-height: 90svh;
+}
+
+/* ==========================================================================
+   Estilos Personalizados de Cards
+   ========================================================================== */
+.card {
+    --bs-card-bg: var(--fondo-secundario);
+    background-color: var(--fondo-secundario);
+    border: 2px solid rgba(51, 51, 51, 0.5); /* Borde color #333333 al 50% de opacidad */
+    border-radius: 1.5rem;                   /* Redondeado proporcional de esquinas ya aplicado */
+    box-shadow: var(--sombra-brutalista);    /* Sombra dura desplazada neo-brutalista */
+    overflow: hidden;                        /* Recorta la imagen para respetar las esquinas curvas */
 }
 
 /* ==========================================================================
@@ -112,3 +182,225 @@ section#inicio {
 .textarea-contacto {
     height: 6.25rem; /* 100px */
 }
+
+/* ==========================================================================
+   Estilos Personalizados de Botones (Regla 6)
+   ========================================================================== */
+
+/* 1. Botón Principal (Primary): redondeado 100%, fondo amarillo, borde negro con elevación */
+.btn-primary {
+    --bs-btn-bg: var(--amarillo-tranquilo);
+    --bs-btn-color: #000000;
+    --bs-btn-border-color: #000000;
+    --bs-btn-hover-bg: #dfaa20;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-border-color: #000000;
+    --bs-btn-active-bg: #c99818;
+    --bs-btn-active-color: #000000;
+    --bs-btn-active-border-color: #000000;
+
+    background-color: var(--amarillo-tranquilo);
+    color: #000000;
+    border: 3px solid #000000;
+    border-bottom: 4.5px solid #000000; /* Borde inferior ~15-20% más grueso para efecto de elevación 3D */
+    border-radius: 50rem; /* Redondeado 100% estilo píldora */
+    font-weight: 700;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.btn-primary:active {
+    transform: translateY(1.5px);
+    border-bottom-width: 3px;
+}
+
+/* 2. Botón Secundario (Secondary): sin fondo, texto blanco y borde blanco redondeado 100% */
+.btn-secondary,
+.btn-outline-primary {
+    --bs-btn-bg: transparent;
+    --bs-btn-color: var(--blanco-base);
+    --bs-btn-border-color: var(--blanco-base);
+    --bs-btn-hover-bg: rgba(255, 255, 255, 0.15);
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-active-bg: rgba(255, 255, 255, 0.25);
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-border-color: #ffffff;
+
+    background-color: transparent;
+    color: var(--blanco-base);
+    border: 2px solid var(--blanco-base);
+    border-radius: 50rem; /* Redondeado 100% estilo píldora */
+    font-weight: 600;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* ==========================================================================
+   Componentes UI de la Landing (Badges, Cinta, Hero, Contacto)
+   Especificidad controlada (0, 1, 0) sin uso de !important
+   ========================================================================== */
+
+/* Variantes de Badges con paleta existente y redondeado 100% */
+.badge-amarillo {
+    background-color: var(--amarillo-tranquilo);
+    color: var(--color-oscuro);
+    border: var(--borde-fino);
+    border-radius: 50rem;
+    font-weight: 700;
+    padding: 0.45em 0.9em;
+}
+
+.badge-lila {
+    background-color: var(--lila-pastel);
+    color: var(--color-oscuro);
+    border: var(--borde-fino);
+    border-radius: 50rem;
+    font-weight: 700;
+    padding: 0.45em 0.9em;
+}
+
+.badge-rosa {
+    background-color: var(--rosa-dulce);
+    color: var(--color-oscuro);
+    border: var(--borde-fino);
+    border-radius: 50rem;
+    font-weight: 700;
+    padding: 0.45em 0.9em;
+}
+
+/* Destacado amarillo en título del Hero con subrayado ondulado */
+.texto-destacado-hero {
+    color: var(--amarillo-tranquilo);
+    position: relative;
+    display: inline-block;
+}
+
+.texto-destacado-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 0.55rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M0,6 Q15,0 30,6 T60,6 T90,6 T120,6' fill='none' stroke='%23EEBC35' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 60px 100%;
+}
+
+/* Sticker circular "¡Nuevo! cupo" en esquina superior izquierda de Card Hero */
+.sticker-nuevo {
+    position: absolute;
+    top: -1.25rem;
+    left: -1.25rem;
+    z-index: 2;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50rem;
+    background-color: var(--amarillo-tranquilo);
+    color: var(--color-oscuro);
+    border: 3px solid var(--blanco-suave);
+    box-shadow: var(--sombra-brutalista-sm);
+    font-family: var(--fuente-titulos);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.05;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(-10deg);
+}
+
+/* Subtítulo de fecha en Cards y Precio con tipografía de título */
+.fecha-curso {
+    color: var(--rojo-vibrante);
+    font-weight: 700;
+}
+
+.precio-curso {
+    font-family: var(--fuente-titulos);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-oscuro);
+}
+
+/* Cinta separadora entre Hero y Cursos */
+.cinta-separadora {
+    background-color: var(--amarillo-tranquilo);
+    color: var(--color-oscuro);
+    border-bottom: 0.2rem solid #000000;
+    font-family: var(--fuente-titulos);
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+/* Contenedor del Formulario de Contacto y controles */
+.card-formulario {
+    background-color: var(--fondo-secundario);
+    border: 2px solid rgba(51, 51, 51, 0.5);
+    border-radius: 1.5rem;
+    box-shadow: var(--sombra-brutalista);
+}
+
+.control-brutalista {
+    border: var(--borde-fino);
+    background-color: #ffffff;
+}
+
+.btn-selector-pais {
+    background-color: var(--lila-pastel);
+    color: var(--color-oscuro);
+    border: var(--borde-fino);
+    font-weight: 700;
+}
+
+/* Píldoras seleccionables para Cursos de Interés (Bootstrap 5 btn-check) */
+.btn-pildora {
+    --bs-btn-color: var(--color-oscuro);
+    --bs-btn-bg: #ffffff;
+    --bs-btn-border-color: var(--color-oscuro);
+    --bs-btn-hover-color: var(--color-oscuro);
+    --bs-btn-hover-bg: var(--lila-pastel);
+    --bs-btn-hover-border-color: var(--color-oscuro);
+    --bs-btn-active-color: var(--color-oscuro);
+    --bs-btn-active-bg: var(--amarillo-tranquilo);
+    --bs-btn-active-border-color: var(--color-oscuro);
+
+    border: var(--borde-fino);
+    border-radius: 50rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.35rem 1rem;
+}
+
+.btn-check:checked + .btn-pildora {
+    background-color: var(--amarillo-tranquilo);
+    color: var(--color-oscuro);
+    border-color: var(--color-oscuro);
+    box-shadow: var(--sombra-brutalista-sm);
+}
+
+/* Tarjetas horizontales de Información de Contacto */
+.tarjeta-info-contacto {
+    background-color: var(--fondo-secundario);
+    border: 2px solid rgba(51, 51, 51, 0.5);
+    border-radius: 1.5rem;
+    box-shadow: var(--sombra-brutalista-sm);
+}
+
+.icono-contacto {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50rem;
+    border: var(--borde-fino);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+

@@ -6,19 +6,20 @@
     <title>TP 1 Cafetería - Ledesma Vanesa</title>
 
     <!-- Tipografías del proyecto -->
-    <!-- Adobe Typekit: baloo-2 (Títulos y destacados) -->
-    <link rel="stylesheet" href="https://use.typekit.net/ojs4bwh.css">
-
-    <!-- Google Fonts: Montserrat (Textos y apoyo) + Sniglet (Detalles y frases) -->
+    <!-- Google Fonts: Bagel Fat One (Títulos), Montserrat (Textos) y Sniglet (Detalles) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS (incluye el sistema de grillas: container, row, col) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Bootstrap Icons (Ecosistema oficial de Bootstrap 5) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
 
@@ -27,9 +28,9 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img
-                    src="logo%20blanco.png"
+                    src="logo%20blanco-lineas-negras_V1.png"
                     alt="Logo Loomb Cafetería"
-                    width="120"
+                    width="210"
                 />
             </a>
             <button
@@ -44,17 +45,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cursos</a>
+                        <a class="nav-link" href="#cursos">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
+                        <a class="nav-link" href="#inicio">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
-                    <li class="nav-item">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Menú
@@ -65,9 +65,8 @@
                             <li><a class="dropdown-item" href="#">Bebidas</a></li>
                         </ul>
                     </li>
-                                      
-
-                        <a class="btn btn-primary" href="#" role="button">Inscribite</a>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary" href="#contacto" role="button">Inscribite</a>
                     </li>
                 </ul>
             </div>
@@ -76,84 +75,104 @@
 
     <!-- 1. Sección Inicio: Contenedor full-width, 2 columnas, fondo rojo vibrante, textos blanco base -->
     <section id="inicio" class="container-fluid d-flex flex-column justify-content-center p-7 bg-rojo-vibrante text-blanco-base">
-        <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-6 col-lg-8">
-                <span class="badge text-bg-secondary">Escuela de Barismo</span>
-                <h1 class="display-5 fw-bold">Aprendé a preparar el café perfecto</h1>
-                <p class="lead">Disfruta los aromas y sabores únicos de nuestra selección de granos tostados artesanalmente en San Luis.</p>
+        <div class="row g-5 align-items-center">
+            <div class="col-12 col-md-6 col-lg-7">
+                <span class="badge badge-amarillo mb-3">★ Escuela de Barismo</span>
+                <h1 class="display-5 mb-4">Aprendé a preparar el <span class="texto-destacado-hero">café perfecto</span></h1>
+                <p class="lead mb-4">Disfruta los aromas y sabores únicos de nuestra selección de granos tostados artesanalmente en San Luis.</p>
                 <div class="d-flex flex-wrap gap-3">
-                    <button class="btn btn-primary" >Ver cursos</button>
-                    <button type="button" class="btn btn-outline-primary">Contactanos</button>
+                    <a href="#cursos" class="btn btn-primary">Ver cursos <i class="bi bi-arrow-right ms-1"></i></a>
+                    <a href="#contacto" class="btn btn-secondary">Contactanos</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                
-                
-                        <div class="card">
-                            <img src="img/expreso101.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Expreso 101" loading="lazy">
-                            
-                            <div class="card-body">
-                                <span class="badge text-bg-secondary">Secondary</span>
-                                <h5 class="card-title">Expreso 101</h5>
-                                <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
-                                <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta. </p>
-                                <a href="#" class="btn btn-primary">Reserva ahora</a>
-                            </div>
-
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="position-relative mx-auto">
+                    <!-- Sticker flotante circular -->
+                    <div class="sticker-nuevo" aria-hidden="true">
+                        <span>¡Nuevo!</span>
+                        <span>cupo</span>
+                    </div>
+                    <div class="card">
+                        <img src="img/expreso101.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Expreso 101" loading="lazy">
+                        <div class="card-body p-4">
+                            <span class="badge badge-lila mb-2">Secondary</span>
+                            <h5 class="card-title mb-1">Expreso 101</h5>
+                            <p class="card-subtitle mb-2 small fecha-curso"><i class="bi bi-calendar3 me-1"></i>Sábado 24/10 · 10 a 13 hs</p>
+                            <p class="card-text text-dark mb-3">Texto de ejemplo breve para complementar el título de la tarjeta.</p>
+                            <a href="#cursos" class="btn btn-primary w-100">Ver cursos <i class="bi bi-arrow-right ms-1"></i></a>
                         </div>
-                  
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Cinta Separadora Amarilla entre Hero y Cursos -->
+    <div class="container-fluid cinta-separadora py-3 px-4">
+        <div class="d-flex flex-wrap justify-content-around align-items-center gap-3 text-center">
+            <span>☕ Espresso</span>
+            <span>★ Latte art</span>
+            <span>☕ Filtrados</span>
+            <span>★ Granos de especialidad</span>
+            <span>☕ Barismo profesional</span>
+            <span>★ San Luis</span>
+        </div>
+    </div>
+
     <!-- 2. Sección Cursos: Contenedor full-width, 3 columnas con 3 cards, fondo lila pastel -->
     <section id="cursos" class="container-fluid p-7 bg-lila-pastel">
         <div class="text-start mb-5">
-            <h2 class="fw-bold">Nuestros Cursos</h2>
-            <p class="text-muted">Aprende con baristas profesionales las mejores técnicas del café</p>
+            <h2>Nuestros Cursos</h2>
+            <p class="text-dark mb-0">Aprende con baristas profesionales las mejores técnicas del café</p>
         </div>
         <div class="row g-4">
             <div class="col-12 col-md-4">
-                <div class="card">
+                <div class="card h-100">
                     <img src="img/Barismo%20Inicial.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Barismo Inicial" loading="lazy">
-                    <div class="card-body">
-                        <span class="badge text-bg-secondary">Inicial</span>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div>
+                            <span class="badge badge-amarillo mb-2">Inicial</span>
+                        </div>
                         <h5 class="card-title">Barismo Inicial</h5>
-                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-subtitle mb-2 small fecha-curso"><i class="bi bi-calendar3 me-1"></i>Sábado 24/10 · 10 a 13 hs</p>
                         <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="fs-5 fw-bold text-dark">$45.000</span>
-                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                            <span class="precio-curso">$45.000</span>
+                            <a href="#contacto" class="btn btn-primary">Reserva ahora</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="card">
+                <div class="card h-100">
                     <img src="img/Latte%20art.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Latte Art" loading="lazy">
-                    <div class="card-body">
-                        <span class="badge text-bg-secondary">Intermedio</span>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div>
+                            <span class="badge badge-rosa mb-2">Intermedio</span>
+                        </div>
                         <h5 class="card-title">Latte art</h5>
-                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-subtitle mb-2 small fecha-curso"><i class="bi bi-calendar3 me-1"></i>Sábado 24/10 · 10 a 13 hs</p>
                         <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="fs-5 fw-bold text-dark">$50.000</span>
-                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                            <span class="precio-curso">$50.000</span>
+                            <a href="#contacto" class="btn btn-primary">Reserva ahora</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-4">
-                <div class="card">
+                <div class="card h-100">
                     <img src="img/M%C3%A9todos%20de%20filtrado.jpg" class="card-img-top img-card object-fit-cover" alt="Curso Métodos de filtrado" loading="lazy">
-                    <div class="card-body">
-                        <span class="badge text-bg-secondary">Todos los niveles</span>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div>
+                            <span class="badge badge-lila mb-2">Todos los niveles</span>
+                        </div>
                         <h5 class="card-title">Métodos de filtrado</h5>
-                        <p class="card-subtitle mb-2 text-body-secondary small">Sábado 24/10 - 10 a 13 hs</p>
+                        <p class="card-subtitle mb-2 small fecha-curso"><i class="bi bi-calendar3 me-1"></i>Sábado 24/10 · 10 a 13 hs</p>
                         <p class="card-text">Texto de ejemplo breve para complementar el título de la tarjeta y constituir la mayor parte de su contenido.</p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="fs-5 fw-bold text-dark">$38.000</span>
-                            <a href="#" class="btn btn-primary">Reserva ahora</a>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                            <span class="precio-curso">$38.000</span>
+                            <a href="#contacto" class="btn btn-primary">Reserva ahora</a>
                         </div>
                     </div>
                 </div>
@@ -164,23 +183,23 @@
     <!-- 3. Sección Contacto: Contenedor full-width, 2 columnas, fondo amarillo tranquilo -->
     <section id="contacto" class="container-fluid p-7 bg-amarillo-tranquilo">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Contacto</h2>
-            <p class="text-muted">Visítanos o déjanos tu consulta</p>
+            <h2>Contacto</h2>
+            <p class="text-dark mb-0">Visítanos o déjanos tu consulta</p>
         </div>
         <div class="row g-5 align-items-center">
             <div class="col-12 col-md-7 col-lg-6">
-                <div class="p-4 bg-white rounded shadow-sm">
+                <div class="p-4 p-lg-5 card-formulario">
                     <form class="row g-3" id="formulario-contacto">
                         <!-- 1. Fila 1: Nombre y Email con Floating Labels -->
                         <div class="col-12 col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="campo-nombre" placeholder="Tu nombre" required>
+                                <input type="text" class="form-control control-brutalista" id="campo-nombre" placeholder="Tu nombre" required>
                                 <label for="campo-nombre">Nombre <span class="text-danger">*</span></label>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="campo-email" placeholder="tu@correo.com" required>
+                                <input type="email" class="form-control control-brutalista" id="campo-email" placeholder="tu@correo.com" required>
                                 <label for="campo-email">Correo electrónico <span class="text-danger">*</span></label>
                             </div>
                         </div>
@@ -188,7 +207,7 @@
                         <!-- 2. Fila 2: Teléfono con Input Group, Dropdown y Floating Label -->
                         <div class="col-12">
                             <div class="input-group">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-selector-pais dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     🇦🇷 +54
                                 </button>
                                 <ul class="dropdown-menu">
@@ -198,38 +217,36 @@
                                     <li><button class="dropdown-item" type="button">🇧🇷 Brasil (+55)</button></li>
                                 </ul>
                                 <div class="form-floating">
-                                    <input type="tel" class="form-control" id="campo-telefono" placeholder="Teléfono" inputmode="numeric" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Ingresa únicamente números" required>
+                                    <input type="tel" class="form-control control-brutalista" id="campo-telefono" placeholder="Teléfono" inputmode="numeric" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Ingresa únicamente números" required>
                                     <label for="campo-telefono">Teléfono <span class="text-danger">*</span></label>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. Fila 3: Cursos de interés en Checkboxes Inline (Controles de selección: no admiten floating labels) -->
+                        <!-- 3. Fila 3: Cursos de interés en Píldoras Seleccionables (Bootstrap 5 btn-check) -->
                         <div class="col-12">
                             <label class="form-label fw-semibold d-block mb-2">Cursos de interés <span class="text-muted fw-normal small">(Opcional)</span></label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="curso-barista" value="barista-inicial">
-                                <label class="form-check-label" for="curso-barista">Barista Inicial</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="curso-latte" value="arte-latte">
-                                <label class="form-check-label" for="curso-latte">Arte Latte</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="curso-filtrados" value="metodos-filtrados">
-                                <label class="form-check-label" for="curso-filtrados">Métodos Filtrados</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                <input type="checkbox" class="btn-check" id="curso-barista" value="barista-inicial" autocomplete="off">
+                                <label class="btn btn-pildora" for="curso-barista">Barista Inicial</label>
+
+                                <input type="checkbox" class="btn-check" id="curso-latte" value="arte-latte" autocomplete="off">
+                                <label class="btn btn-pildora" for="curso-latte">Arte Latte</label>
+
+                                <input type="checkbox" class="btn-check" id="curso-filtrados" value="metodos-filtrados" autocomplete="off">
+                                <label class="btn btn-pildora" for="curso-filtrados">Métodos Filtrados</label>
                             </div>
                         </div>
 
                         <!-- 4. Fila 4: Campo de texto abierto con Floating Label -->
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control textarea-contacto" id="campo-mensaje" placeholder="Mensaje o Consulta"></textarea>
+                                <textarea class="form-control control-brutalista textarea-contacto" id="campo-mensaje" placeholder="Mensaje o Consulta"></textarea>
                                 <label for="campo-mensaje">Mensaje o Consulta <span class="text-muted fw-normal small">(Opcional)</span></label>
                             </div>
                         </div>
 
-                        <!-- 5. Fila 5: Checkbox de novedades/promociones (Control de selección: no admite floating labels) -->
+                        <!-- 5. Fila 5: Checkbox de novedades/promociones -->
                         <div class="col-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="check-promociones">
@@ -239,21 +256,49 @@
                             </div>
                         </div>
 
-                        <!-- Botón de envío del formulario -->
+                        <!-- Botón de envío del formulario (usa .btn-primary definido) -->
                         <div class="col-12 pt-2">
-                            <button type="submit" class="btn btn-primary w-100">Enviar consulta</button>
+                            <button type="submit" class="btn btn-primary w-100">Enviar consulta <i class="bi bi-send ms-1"></i></button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="col-12 col-md-5 col-lg-6">
-                <h4 class="fw-bold">Visita Nuestra Cafetería</h4>
-               
-                <p class="mb-1"><strong>📍 Dirección:</strong> Av. del Fundador 1450, San Luis</p>
-                <p class="mb-1"><strong>⏰ Horarios:</strong> Lunes a Sábados: 8:00 a 20:30 hs</p>
-                <p class="mb-0"><strong>📞 Teléfono:</strong> (0266) 400-0000</p>
+                <h3 class="mb-4">Visita Nuestra Cafetería</h3>
+
+                <!-- Tarjeta 1: Dirección -->
+                <div class="tarjeta-info-contacto d-flex align-items-center gap-3 p-3 mb-3">
+                    <span class="icono-contacto bg-rojo-vibrante text-blanco-base">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+                    <div>
+                        <span class="d-block fw-bold">Dirección</span>
+                        <span class="small">Av. del Fundador 1450, San Luis</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Horarios -->
+                <div class="tarjeta-info-contacto d-flex align-items-center gap-3 p-3 mb-3">
+                    <span class="icono-contacto badge-rosa">
+                        <i class="bi bi-clock-fill"></i>
+                    </span>
+                    <div>
+                        <span class="d-block fw-bold">Horarios</span>
+                        <span class="small">Lunes a Sábados: 8:00 a 20:30 hs</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Teléfono -->
+                <div class="tarjeta-info-contacto d-flex align-items-center gap-3 p-3">
+                    <span class="icono-contacto bg-lila-pastel text-dark">
+                        <i class="bi bi-telephone-fill"></i>
+                    </span>
+                    <div>
+                        <span class="d-block fw-bold">Teléfono</span>
+                        <span class="small">(0266) 400-0000</span>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </section>
 
@@ -264,14 +309,14 @@
                 <p class="mb-0">&copy; 2026 Cafetería Loomb. Todos los derechos reservados.</p>
             </div>
             <div class="col-12 col-md-6 text-md-end">
-                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3">
-                    WhatsApp
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3 d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-whatsapp"></i> WhatsApp
                 </a>
-                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3">
-                    Facebook
+                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none me-3 d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-facebook"></i> Facebook
                 </a>
-                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">
-                    Instagram
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-instagram"></i> Instagram
                 </a>
             </div>
         </div>
