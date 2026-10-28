@@ -44,6 +44,11 @@ body {
     font-weight: 600;   /* Peso semibold */
 }
 
+/* La descripción (.lead) iguala el peso del resto de textos (Montserrat 600) */
+.lead {
+    font-weight: 600;
+}
+
 /* 2. Títulos únicamente: Bagel Fat One (peso nativo 400 para evitar negrita sintética) */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
@@ -55,12 +60,20 @@ h1, h2, h3, h4, h5, h6,
 
 /* ==========================================================================
    Ajuste de Escala Tipográfica (Mayor Impacto Visual)
+   h1 +100% (de 2.75rem a 5.5rem) | h2..h6 +50%
    ========================================================================== */
-h1, .h1 { font-size: 2.75rem; }
-h2, .h2 { font-size: 2.25rem; }
-h3, .h3 { font-size: 1.85rem; }
-h4, .h4 { font-size: 1.5rem; }
-h5, .h5 { font-size: 1.3rem; }
+h1, .h1 { font-size: 5.5rem; }
+h2, .h2 { font-size: 3.375rem; }
+h3, .h3 { font-size: 2.775rem; }
+h4, .h4 { font-size: 2.25rem; }
+h5, .h5 { font-size: 1.95rem; }
+h6, .h6 { font-size: 1.5rem; }
+
+/* Adaptación responsive para prevenir desbordes de viewport en pantallas pequeñas (Regla 5) */
+@media (max-width: 768px) {
+    h1, .h1 { font-size: clamp(2.75rem, 10vw, 4rem); }
+    h2, .h2 { font-size: clamp(2rem, 7vw, 2.75rem); }
+}
 
 /* Display escalado de forma fluida y responsiva para máximo impacto */
 .display-1 { font-size: clamp(3.5rem, 7vw, 5.5rem); }
@@ -117,6 +130,31 @@ nav.navbar {
     --bs-navbar-brand-hover-color: var(--blanco-base);
     --bs-navbar-toggler-border-color: rgba(235, 235, 235, 0.5);
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23EBEBEB' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Opciones del menú desplegable con hover amarillo, texto negro y borde divisor */
+.navbar .dropdown-menu {
+    border: var(--borde-fino);
+    border-radius: 0.75rem;
+    box-shadow: var(--sombra-brutalista-sm);
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--fondo-secundario);
+}
+
+.navbar .dropdown-item {
+    font-weight: 600;
+    color: var(--color-oscuro);
+    padding: 0.65rem 1.25rem;
+    border-bottom: 0.2rem solid transparent; /* Espacio reservado para evitar saltos de layout en hover */
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: var(--amarillo-tranquilo);
+    color: #000000;
+    border-bottom-color: #000000;
 }
 
 section {
@@ -271,11 +309,17 @@ section#inicio {
     padding: 0.45em 0.9em;
 }
 
-/* Destacado amarillo en título del Hero con subrayado ondulado */
+/* Destacado amarillo en título del Hero con subrayado ondulado y rotación */
 .texto-destacado-hero {
     color: var(--amarillo-tranquilo);
     position: relative;
     display: inline-block;
+    transform: rotate(-5deg);
+}
+
+/* Card destacada del Hero con rotación */
+.card-hero {
+    transform: rotate(5deg);
 }
 
 .texto-destacado-hero::after {
